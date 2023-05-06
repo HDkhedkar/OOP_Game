@@ -12,7 +12,8 @@ class find_number:
             
             l2=[i for i in range(1,7)]### Make Level Harder
             number2=random.choice(l2)####
-            number3=random.choice(l2)####
+            l3=[i for i in range(15,0,-2)]####
+            number3=random.choice(l3)####
 
             input1=int(input('Enter number between 0 to 100 : '))
 
