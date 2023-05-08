@@ -20,6 +20,8 @@ class find_number:
             print('|\|--/|\--|/|')
             print('|\|--\| \-|/|')
             print('|\|__/_\__|/| X X X X X X This is Wrong Way..."-_-"')
+            print('|\|_/___\_|/|')
+
             print('\n'*3)
 
 
@@ -32,7 +34,7 @@ class find_number:
 
 
         while True:
-            if (input2 > 3) or (input2 < 0):####456789..-1-2-3-4-5...X X X X
+            if (input2 > 3) or (input2 < 1):####456789..-1-2-3-4-5...X X X X
                 print('\n'*3)
                 print('Please read "Menu" carefully and then Enter..."-_-"')
                 print('\n'*3)
@@ -40,6 +42,8 @@ class find_number:
                 print('|\|--/|\--|/|')
                 print('|\|--\| \-|/|')
                 print('|\|__/_\__|/| X X X X X X This is Wrong Way..."-_-"')
+                print('|\|_/___\_|/|')
+
                 print('\n'*3)
 
                 print('____1___________GAME START HERE  -->  -->')
@@ -64,7 +68,29 @@ class find_number:
             l3=[i for i in range(end,5,-step)]####
             number3=random.choice(l3)####
 
-            input1=int(input('Enter number between 0 to 100 : '))
+            try:
+                input1=int(input('Enter number between 0 to 100 : '))
+                if input1<1:
+                    print('Please Enter Positive integer.')
+                    game.search()
+            
+            except:
+                print('\n'*3)
+                print('Please read "Menu" carefully and then Enter..."-_-"')
+                print('\n'*3)
+                print('|\|---O---|/|')
+                print('|\|--/|\--|/|')
+                print('|\|--\| \-|/|')
+                print('|\|__/_\__|/| X X X X X X This is Wrong Way..."-_-"')
+                print('|\|_/___\_|/|')
+                print('\n'*3)
+
+
+                print('____1___________GAME START HERE  -->  -->')
+                print('____2___________GAME START HERE  -->  -->')
+                print('____3___________GAME START HERE  -->  -->')
+
+                game.search()
 
             # print('number=',self.number1,'    difference=',number2,number3)#### Only for devloper..testing purpose.
 
@@ -77,7 +103,7 @@ class find_number:
             if add>100:
                 add=100
 
-            if number1==input1:
+            if self.number1==input1:
                 print('\n'*4,'='*79)
                 print('_-_'*26,'\n'*4)
                 print('                                                                       O     |\  ')
@@ -98,19 +124,19 @@ class find_number:
 
             elif(input1>=(self.number1+7)) or (input1<=(self.number1-7)):### Make Level Harder
                 print(f'You are "so long" to Win this game')
-                print(f'it is between  {sub} to {add}')
+                print(f'You are entered {input1} but it is between  {sub} to {add}')
 
             elif (input1==(self.number1+5)) or (input1==(self.number1-5)) or (input1==(self.number1+6)) or (input1==(self.number1-6)):
                 print(f'You are "little bit longer" to Win this game')
-                print(f'it is between  {sub} to {add}')
+                print(f'You are entered {input1} but it is between  {sub} to {add}')
 
             elif (input1==(self.number1+2)) or (input1==(self.number1-2)) or (input1==(self.number1+3)) or (input1==(self.number1-3)) or (input1==(self.number1+4)) or (input1==(self.number1-4)):
                 print(f'You are "closer" to Win this game')
-                print(f'it is between  {sub} to {add}')
+                print(f'You are entered {input1} but it is between  {sub} to {add}')
 
             elif (input1==(self.number1+1)) or (input1==(self.number1-1)):
                 print(f'You are "Closest" to Win')
-                print(f'it is between  {sub} to {add}')
+                print(f'You are entered {input1} but it is between  {sub} to {add}')
                 
 game=find_number(number1)
 game.search()
